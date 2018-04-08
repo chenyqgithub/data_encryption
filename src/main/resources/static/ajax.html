@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="user/findById" method="post">
+    <input name="os" value="张" /><br>
+    <input name="variable.id" value="3" /><br>
+    <input type="submit" value="Save" />
+</form>
+</body>
+</html>
+<script src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+    $.ajax({
+        url: '/user/findById',
+        type: "POST",
+        data: {'os':'33','variable.id':3},
+        dataType: "json",
+        contentType: "application/json",
+        async: false,
+        success: function (result) {
+
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            //console.log(thrownError); //alert any HTTP error
+            //alert("请求出错！");
+            return false;
+        }
+    });
+</script>
